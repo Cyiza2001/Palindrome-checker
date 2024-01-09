@@ -5,7 +5,7 @@ const result =document.querySelector('#result');
 
 //eventlistners
 checkButton.addEventListener('click',function(e){
-   const regex = /[!@#$%^&*(),.?":{}|<>]/g;
+   const regex = /[!@#$%^&*(),.?":{}|<>_\-\s+=*]/g;;
  const inputWord = textInput.value.split().map(char=> char.replace(regex,'') ).join('').toLowerCase();
  const reverseInputWord= inputWord.split('').reverse().join('');
   console.log(reverseInputWord);
@@ -13,9 +13,9 @@ checkButton.addEventListener('click',function(e){
    alert('please input a value');
 }
    if(inputWord === reverseInputWord) {
-   result.innerHTML =`${inputWord} is a palindrome`;
+   result.innerHTML =`${textInput.value} is a palindrome`;
 }
 else if (inputWord !== reverseInputWord){
-  result.innerHTML =`${inputWord} is not a palindrome`;
+  result.innerHTML =`${textInput.value} is not a palindrome`;
 }
 })
